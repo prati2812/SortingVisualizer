@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="?android:colorBackground"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView_control_bb_sort_top"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:layout_margin="5dp"
+            app:cardElevation="3dp"
+            app:cardCornerRadius="5dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <ImageButton
+                android:id="@+id/button_closemenu"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:contentDescription="Close"
+                android:src="@drawable/ic_close"
+                android:layout_marginStart="5dp"
+                android:layout_alignParentStart="true"
+                android:background="?android:selectableItemBackground"    />
+
+                <ImageButton
+                android:id="@+id/button_helpmenu"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:contentDescription="Help"
+                android:src="@drawable/ic_help"
+                android:layout_marginStart="5dp"
+                android:background="?android:selectableItemBackground"
+                android:layout_toEndOf="@+id/button_closemenu"    />
+
+                <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingTop="5dp"
+                android:paddingBottom="10dp"
+                android:text="Bubble Sort"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_toEndOf="@+id/button_helpmenu"    />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_below="@+id/cardView_control_bb_sort_top"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            app:cardElevation="3dp"
+            app:cardCornerRadius="5dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fadeScrollbars="false"
+                    android:fadingEdgeLength="50dp"
+                    android:requiresFadingEdge="vertical"
+                    android:scrollbarSize="5dp"
+                    android:scrollbarStyle="outsideInset"
+                    android:scrollbarThumbVertical="@drawable/scrollbar_gradient_vertical"
+                    android:verticalScrollbarPosition="left">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?android:colorBackground"
+                        android:orientation="vertical"
+                        android:padding="10dp"
+                        android:showDividers="middle">
+
+                        <RelativeLayout
+                            android:id="@+id/relative_random_array"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:orientation="horizontal">
+
+                            <Switch
+                                android:id="@+id/switch_random_array"
+                                android:layout_width="wrap_content"
+                                android:layout_height="48dp"
+                                android:checked="true"
+                                android:showText="false"
+                                android:text="Random Array"
+                                android:textAllCaps="false"
+                                android:textColorLink="#FFFFFF"
+                                android:textOff="Custom Array"
+                                android:textOn="Random Array"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginEnd="5dp"/>
+
+                            <View
+                                android:id="@+id/view1"
+                                android:layout_width="2dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="3dp"
+                                android:background="?android:attr/listDivider"
+                                android:layout_toEndOf="@+id/switch_random_array"
+                                android:layout_marginEnd="5dp"/>
+
+                            <TextView
+                                android:id="@+id/txtArraySize_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="Array Size"
+                                android:textColor="@color/black"
+                                android:textStyle="bold"
+                                android:layout_toEndOf="@+id/view1"
+                                android:layout_marginEnd="5dp"/>
+
+                            <View
+                                android:id="@+id/view2"
+                                android:layout_width="2dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="3dp"
+                                android:background="?android:attr/listDivider"
+                                android:layout_toEndOf="@+id/txtArraySize_text"
+                                android:layout_marginEnd="5dp"/>
+
+                            <TextView
+                                android:id="@+id/text_arraysize_no"
+                                android:layout_width="80dp"
+                                android:layout_height="match_parent"
+                                android:layout_centerInParent="true"
+                                android:layout_toEndOf="@+id/view2"
+                                android:gravity="center"
+                                android:text="1"
+                                android:textColor="@color/black" />
+                        </RelativeLayout>
+
+                        <SeekBar
+                            android:layout_below="@+id/relative_random_array"
+                            android:id="@+id/seekbar_arraysize"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:max="15"
+                            android:progress="3" />
+
+                        <TextView
+                            android:id="@+id/txtOr"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="or"
+                            android:layout_below="@+id/seekbar_arraysize"/>
+
+                        <EditText
+                            android:layout_below="@+id/txtOr"
+                            android:id="@+id/edit_text_customarray"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:digits="0123456789,"
+                            android:ems="10"
+                            android:gravity="center"
+                            android:hint="Comma separated +ve elements"
+                            tools:ignore="Autofill,TextFields" />
+
+                        <View
+                            android:id="@+id/horizontalDiv"
+                            android:layout_width="match_parent"
+                            android:layout_height="3dp"
+                            android:background="?android:attr/listDivider"
+                            android:layout_below="@+id/edit_text_customarray"/>
+
+                        <Button
+                            android:id="@+id/button_generate"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="Generate"
+                            android:textSize="14sp"
+                            android:layout_below="@+id/horizontalDiv"/>
+
+                        <Button
+                            android:id="@+id/button_clear"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:text="Clear"
+                            android:textSize="14sp"
+                            android:layout_below="@+id/button_generate"/>
+
+                    </RelativeLayout>
+
+                </ScrollView>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

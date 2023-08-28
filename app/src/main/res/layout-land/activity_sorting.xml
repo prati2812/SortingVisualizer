@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/relative_sorting_main"
+    tools:ignore="MissingDefaultResource">
+
+
+    <RelativeLayout
+        android:id="@+id/relative_top"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_230sdp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/sorting_animation_cardView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:cardCornerRadius="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_toStartOf="@+id/psuedocode_cardView"
+            app:cardElevation="@dimen/_12sdp">
+
+            <LinearLayout
+                android:id="@+id/ll_anim"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/psuedocode_cardView"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="match_parent"
+            app:cardCornerRadius="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_alignParentEnd="true"
+            app:cardElevation="@dimen/_12sdp">
+
+            <ScrollView
+                android:id="@+id/psuedocode_scrollView_cardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fadeScrollbars="false"
+                android:scrollbarSize="@dimen/_2sdp"
+                android:scrollbarStyle="outsideInset"
+                android:scrollbarThumbVertical="@drawable/scrollbar_gradient_vertical"
+                android:verticalScrollbarPosition="left"
+                android:layout_alignParentEnd="true">
+
+                <LinearLayout
+                    android:id="@+id/pseudocode_linearL_cardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="?android:listDivider"
+                    android:orientation="vertical"
+                    android:showDividers="middle">
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_120sdp"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/_1sdp"
+        android:orientation="horizontal"
+        android:layout_below="@+id/relative_top">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/_7sdp"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            app:cardElevation="@dimen/_12sdp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/button_navigation"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="match_parent"
+                android:contentDescription="Navigation View"
+                android:layout_alignParentStart="true"
+                android:background="?android:selectableItemBackground"
+                android:scaleType="center"
+                app:srcCompat="@drawable/ic_menu_navigation" />
+
+            <View
+                android:id="@+id/horizontalDiv1"
+                android:layout_width="@dimen/_2sdp"
+                android:layout_height="match_parent"
+                android:background="?android:attr/listDivider"
+                android:layout_toEndOf="@+id/button_navigation" />
+
+            <HorizontalScrollView
+                android:layout_toEndOf="@+id/horizontalDiv1"
+                android:id="@+id/horizontal_scrollView_parent"
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="match_parent"
+                android:fadeScrollbars="false"
+                android:scrollbarSize="@dimen/_5sdp"
+                android:scrollbarStyle="outsideInset"
+                android:scrollbarThumbHorizontal="@drawable/scrollbar_gradient_vertical">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout_parent"
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textview_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="start|center_vertical"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:paddingEnd="@dimen/_15sdp"
+                        android:text="@string/textViewInfo"
+                        android:textSize="@dimen/_18sdp" />
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <View
+                android:id="@+id/divider6"
+                android:layout_width="@dimen/_2sdp"
+                android:layout_height="match_parent"
+                android:background="?android:attr/listDivider"
+                android:layout_toEndOf="@+id/horizontal_scrollView_parent"/>
+
+            <TextView
+                android:id="@+id/textview_sequence_no"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="match_parent"
+                android:text="0"
+                android:gravity="center_vertical|center_horizontal"
+                android:textColor="@color/black"
+                tools:layout_editor_absoluteY="0dp"
+                android:layout_toEndOf="@+id/divider6"/>
+
+            <View
+                android:id="@+id/divider5"
+                android:layout_width="@dimen/_2sdp"
+                android:layout_height="match_parent"
+                android:background="?android:attr/listDivider"
+                android:layout_toEndOf="@+id/textview_sequence_no"/>
+
+            <RelativeLayout
+                android:id="@+id/animation_controls_relative"
+                android:layout_width="@dimen/_110sdp"
+                android:layout_height="match_parent"
+                android:layout_toEndOf="@+id/divider5">
+
+                <SeekBar
+                    android:id="@+id/seekbar_animation_speed"
+                    android:layout_width="@dimen/_105sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:progress="50" />
+
+                <ImageButton
+                    android:id="@+id/button_backward"
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="match_parent"
+                    android:contentDescription="Backward"
+                    android:padding="@dimen/_10sdp"
+                    android:layout_below="@+id/seekbar_animation_speed"
+                    android:layout_alignParentStart="true"
+                    android:background="?android:selectableItemBackground"
+                    app:srcCompat="@drawable/ic_backward_step" />
+
+                <ImageButton
+                    android:id="@+id/button_forward"
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="match_parent"
+                    android:contentDescription="forward"
+                    android:layout_below="@+id/seekbar_animation_speed"
+                    android:layout_toEndOf="@+id/button_play"
+                    android:padding="@dimen/_10sdp"
+                    android:background="?android:selectableItemBackground"
+                    app:srcCompat="@drawable/ic_forward_step" />
+
+                <ImageButton
+                    android:id="@+id/button_play"
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="match_parent"
+                    android:contentDescription="Play/Pause"
+                    android:layout_toEndOf="@+id/button_backward"
+                    android:layout_below="@+id/seekbar_animation_speed"
+                    android:scaleType="center"
+                    android:background="?android:selectableItemBackground"
+                    app:srcCompat="@drawable/ic_play" />
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="@dimen/_2sdp"
+                android:layout_height="match_parent"
+                android:background="?android:attr/listDivider"
+                android:layout_toEndOf="@+id/animation_controls_relative"/>
+
+            <ImageButton
+                android:id="@+id/button_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="Hide Code"
+                app:srcCompat="@drawable/ic_code"
+                android:background="?android:selectableItemBackground"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="25dp"
+                android:layout_toEndOf="@+id/divider3"/>
+
+            <ImageButton
+                android:id="@+id/button_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="Info"
+                app:srcCompat="@drawable/ic_info"
+                android:background="?android:selectableItemBackground"
+                android:layout_marginStart="25dp"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/button_code"/>
+
+            <View
+                android:id="@+id/horizontalDiv4"
+                android:layout_width="@dimen/_2sdp"
+                android:layout_height="match_parent"
+                android:background="?android:attr/listDivider"
+                android:layout_marginStart="25dp"
+                android:layout_toEndOf="@+id/button_info"/>
+
+            <ImageButton
+                android:id="@+id/button_menu"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="match_parent"
+                android:contentDescription="Controls Menu"
+                app:srcCompat="@drawable/ic_menu_controls"
+                android:layout_alignParentEnd="true"
+                android:background="?android:selectableItemBackground"
+                android:scaleType="center"
+                android:layout_toEndOf="@+id/horizontalDiv4" />
+
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</RelativeLayout>
